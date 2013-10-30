@@ -107,12 +107,12 @@ Front : Usefull Plugins
 -----------------------
 
  * qTip2 - Pretty powerful tooltips - v2.1.1
- * http://qtip2.com
- * Copyright (c) 2013 Craig Michael Thompson
+   http://qtip2.com
+   Copyright (c) 2013 Craig Michael Thompson
 
 
  * ScrewDefaultButtons v2.0.6
- * http://screwdefaultbuttons.com/
- * Copyright 2013 Matt Solano http://mattsolano.com
+   http://screwdefaultbuttons.com/
+   Copyright 2013 Matt Solano
 
 
