@@ -1,0 +1,9 @@
+deny from all
+
+<Files "contact.html">
+	allow from all
+</Files>
+
+<Files "contact.css">
+	allow from all
+</Files>

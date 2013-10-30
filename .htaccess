@@ -1,0 +1,6 @@
+SetEnv PHP_VER 5
+
+RewriteBase /
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^moodzeek.com$
+RewriteRule ^(.*)   http://www.moodzeek.com/$1  [QSA,L,R=301]

@@ -1,0 +1,205 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="music, free, Deezer, MP3, streaming, mood, activity, playlist, participative, favorite, radio, Mourousi" />
+	<meta name="description" content="A smart radio based on a participative playlist according to listeners' mood and activity"/>
+
+	<title>MoodZeek | Mood &amp; Music</title>
+	
+	<link href="img/favicon.v2.ico" 		rel="shortcut icon" type="image/x-icon"/>
+	<link href="img/favicon.v2.ico" 		rel="icon" type="image/x-icon"/>
+	<link href="styles/styles.css" 			rel="stylesheet" type="text/css"/>
+	<link href="styles/buttonStyles.css" 	rel="stylesheet" type="text/css" />
+	<link href="qtip/jquery.qtip.min.css" 	rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/deezerinit.js" 		charset="utf-8"></script>
+	<script type="text/javascript" src="checkbox/js/jquery.screwdefaultbuttonsV2.min.js"></script>
+	<script type="text/javascript" src="qtip/jquery.qtip.min.js">				</script>
+	<script type="text/javascript" src="js/actions.js" 			charset="utf-8"></script>
+	<script type="text/javascript" src="js/animation.js" 		charset="utf-8"></script>
+	<script type="text/javascript" src="js/deezerutil.js"	 	charset="utf-8"></script>
+	<script type="text/javascript" src="js/contact.js"	 		charset="utf-8"></script>
+	<script type="text/javascript" src="js/ga.js"	 			charset="utf-8"></script>
+
+</head>
+
+<body>
+	<!-- ATTENTE DU CHARGEMENT DE LA PAGE -->
+	<div id="hideAll"></div>
+	<script type="text/javascript"> document.getElementById("hideAll").style.display = "block";</script>
+	
+	<!-- HEADER avec Logo et informations de Login -->
+	<div id="header">
+		<div id="leftHeader">
+			<div id="logo"><a href="http://www.moodzeek.com" onclick="return false;"><img src="img/MoodZeek.v1.big.PM0.little.png" alt='MoodZeek Smiley'/></a></div>
+			<div id="login"><a href="http://www.deezer.com/fr/?lb=login&amp;app_id=122295" target="_blank" id="loginButton" onclick="login(); return false;" title="Deezer Services">Login</a></div>
+			<div class="clear"></div>
+		</div>
+		<div id="rightHeader">
+			<div id="pseudo"><a href="http://www.deezer.com/fr/loved/?app_id=122295" target="_blank" title="My Deezer Account"></a></div>
+		</div>
+	</div>
+
+	<!-- CONTAINER : Dashboard (boutons de filtres et d'action) + Iframe Deezer Player -->
+	<div id="container" class="clear">
+	
+		<div id="dashboard" >
+		
+			<div id="teaser" >
+				<hr><h2><b><span class="big">M</span>ood listening <span class="big"> &nbsp; &amp; &nbsp; K</span>eeping favorites</b></h2><hr>
+			</div>
+			
+			<!-- FORMULAIRES -->
+			<form name="form">
+				<!-- SELECTION DES TAGS -->	
+				<table id="moodTable" >
+				<tr>
+					<th colspan="4"><a href="#" id="moodSelect" title="Select/Deselect all"><p class="h2"><b>Mood</b></p></a></th>
+				</tr>
+				<tr>
+					<td colspan="1" title="&nbsp;So So&nbsp;">
+						<input class="mood" id="easy" name="mood[]" type="checkbox" value="1" /><label for="easy">Easy</label></td>
+					<td colspan="1" title="A good mood">
+						<input class="mood" id="happy" name="mood[]" type="checkbox" value="2" /><label for="happy">Happy</label></td>
+					<td colspan="1" title="Fever inside">
+						<input class="mood" id="nervous" name="mood[]" type="checkbox" value="3" /><label for="nervous">Nervous</label></td>
+					<td colspan="1" title="Tough times">
+						<input class="mood" id="sad"   name="mood[]" type="checkbox" value="4" /><label for="sad">Sad</label></td>
+				</tr>
+				</table>
+				<table id="activTable">
+				<tr>
+					<th colspan="3"><a href="#" id="activSelect" title="Select/Deselect all"><p class="h2"><b>Activity</b></p></a></th>
+				</tr>
+				<tr>
+					<td colspan="1" title="Swing or Lounge">
+						<input class="activ" id="cocktail" 	name="activ[]" type="checkbox" value="1" /><label for="cocktail">Cocktail</label></td>
+					<td colspan="1" title="Groove On">
+						<input class="activ" id="mooving" 	name="activ[]" type="checkbox" value="2" /><label for="mooving">Mooving</label></td>
+					<td colspan="1" title="Wide Ears">
+						<input class="activ" id="housework" name="activ[]" type="checkbox" value="3" /><label for="housework">Housework</label></td>
+				</tr>
+				<tr>
+					<td colspan="1" title="On the Road again">
+						<input class="activ" id="driving" 	name="activ[]" type="checkbox" value="4" /><label for="driving">Driving</label></td>
+					<td colspan="1" title="Zen Attitude">
+						<input class="activ" id="chillout" 	name="activ[]" type="checkbox" value="5" /><label for="chillout">Chill Out</label></td>
+					<td colspan="1" title="Staying focused">
+						<input class="activ" id="working" 	name="activ[]" type="checkbox" value="6" /><label for="working">Working</label></td>
+				</tr>
+				<tr>
+					<td colspan="1" title="Sweet Dreams">
+						<input class="activ" id="zzzzz" 	name="activ[]" type="checkbox" value="7" /><label for="zzzzz">zZzzZ</label></td>
+					<td colspan="1" title="A call for Devils">
+						<input class="activ" id="cuddle" 	name="activ[]" type="checkbox" value="8" /><label for="cuddle">Cuddle</label></td>
+					<td colspan="1" title="Deep Inside">
+						<input class="activ" id="thoughts" 	name="activ[]" type="checkbox" value="9" /><label for="thoughts">Thoughts</label></td>
+				</tr>
+				</table>
+				<!-- ACTIONS -->	
+				<table id="buttonTable">
+				<tr>
+					<!-- BOUTONS DE GENERATION DE PLAYLIST -->	
+					<th colspan="3"><a href="#" id="buttonList" class="buttonRect" title="Generate random playlist from the shared database">Play from Community</a></th>					
+				</tr>
+				<tr>
+					<th colspan="1"><a href="#" id="buttonFav" class="buttonRect" title="Generate random playlist from your favorites">Play Favorites</a></th>
+					<th colspan="1">
+						<a href="#" id="buttonAdd" class="buttonRect" title="Add the current track to your favorites">Add !</a>
+						<a href="#" id="buttonRem" class="buttonRect" title="Remove the current track from your favorites">Remove</a></th>
+					<!-- SYSTEME DE VOTE -->	
+					<th rowspan="2" id="voteCell">
+						<div id="voteDiv">
+							<a href="#" id="voteUp" >Vote Up !</a>
+							<span id="voteCount" title="&nbsp;<br>Switch to Filter<br>&nbsp;">Vote</span>
+							<a href="#" id="voteDown" >Vote Down</a>
+						</div>
+					</th>
+				</tr>
+				<tr>
+					<!-- RETROUVER SES PLAYLISTS DEEZER -->				
+					<th colspan="1"><a href="#" id="buttonRetr" class="buttonRect" title="Retrieve your Deezer playlists">Deezer Playlists</a></th>
+					<!-- FORMULAIRE DE RECHERCHE DEEZER -->				
+					<th colspan="1">
+						<input id="inputSearch" name="inputsearch" type="text" value="Deezer Search" />
+						<a href="#" id="goSearch" class="buttonRound" title="Search title from Deezer database">Go</a>
+					</th>
+				</tr>
+				</table>
+			</form>
+			
+			<!-- ANIMATION -->
+			<div id="witness"><p>... Oups , MoodZeek needs Javascript ...</p></div>			
+		</div>
+		
+		<!-- PLAYER DIV -->
+		<div id="playerContainer">
+			<div id="player" ></div>
+		</div>
+		<!-- CLEAR COLUMNS -->
+		<div class="clear" ></div>
+		
+	</div>
+	<div id="footer" > <!--title="Terms of use and Contact form available here"-->
+		<p> &rsaquo;&lsaquo;((((&#176;&rsaquo;&nbsp;&nbsp;&nbsp;
+			<a id="termsLink" href="#"><em> Terms of services</em></a> &nbsp;&laquo;&laquo;&nbsp;
+			<strong> www.moodzeek.com </strong> dev &amp; design <span class="big">&copy;</span> 2013 by 
+			<strong id="contact_us"> Aurelie Hampel &amp; Alex Mourousy </strong> &nbsp;&raquo;&raquo;&nbsp;
+			<a id="contactLink" href="http://www.moodzeek.com/contact/contact.html"><em>Contact us !</em></a>
+			&nbsp;&nbsp;&nbsp;&lsaquo;&#176;))))&rsaquo;&lsaquo;
+		</p>
+	</div>
+	
+	<!-- WELCOME QTIP -->
+	<div id='welcomeTipHtml'>
+		<div id='welcome'>
+			<img id='welcomeLogo' src='img/MoodZeek.v1.big.PM0.little.png' alt='MoodZeek Smiley'/>					
+			<img id='welcomeLoader' src='img/heart-loader.v1.gif' alt='Heart'/>
+			<h2><span class="big">S</span>mart and <span class="big">P</span>articipative <span class="big">R</span>adio</h2>
+		</div>
+	</div>	
+		
+	<!-- QTIP TEASER / DIRECTIONS -->
+	<div id='teaserTipHtml'>
+		<div id='teaserTip'>		
+			<h2>Music enhances emotions &amp; rythms our steps</h2><!-- br/ -->
+			<img id='teaserStave' src='img/stave.png' alt='Birds on a stave'/>
+			<h3>Wish to set up a 50 random track &amp; ideal Playlist ? &nbsp; Let MoodZeek surprise you</h3>
+			<img class='teaserArray' src='img/play.png' alt='How to use'/>
+			<p>Select your Mood or Activity, better both. Then Play from Community or from your Favorites</p>
+			<h3>Be active for Community or build your own Playlist ! &nbsp; Add your Favorite titles</h3>
+			<img class='teaserArray' src='img/record.png' alt='How to use'/>
+			<p>Play from Search, your Deezer Playlists or Community, select Moods and Activities. Then Add to Favorites</p>
+			<h3>Take benefit from our Vote Filtering system ! &nbsp; Rate MoodZeek database tracks</h3>
+			<img class='teaserArray' src='img/eject.png' alt='How to use'/>
+			<p>Keep in mind that what you hear is what you Add. &nbsp; Please ever Add thoughfully ! And enjoy </p>
+ 			<div class="clear"></div>
+			<div id="teaserThanks">
+				<div id='teaserDZ'>
+					<a id="teaserDZLink" href="http://www.deezer.com/?app_id=122295" target="_blank">
+						<img id='teaserDZImg' src='img/deezer_v0.jpg' alt='Logo Deezer'/>
+					</a>
+					<h4>Proudly powered with Deezer Catalog &amp; API</h4>
+				</div>
+				<div id='teaserQTip'>
+					<h4>Thanks to Craig's qTip2 brilliant works</h4>
+					<a id="teaserQTipLink" href="http://www.qtip2.com/" target="_blank">
+						<img id='teaserQTipImg' src='img/qtip.png' alt='Logo qTip'/>
+					</a>
+				</div>
+				<div id='teaserScreen'>
+					<a id="teaserScreenLink" href="http://www.hebus.com/membre192828-page1.html" target="_blank">
+						<img id='teaserScreenImg' src='img/turntable-thumb_1.jpg' alt='Photo Djgorgo'/>
+					</a>
+					<h4>Background Screen from Djgorgo</h4>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<!-- DZ JS SDK -->
+    <div id="dz-root"></div>
+
+</body>
+</html>

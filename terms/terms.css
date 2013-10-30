@@ -1,0 +1,15 @@
+
+
+	.qtip {
+		max-width: 70% !important; /*500px !important;*/
+		padding:7px;
+		margin:0 30px 0 0;	
+	}
+	.qtip-content{
+        position: relative;
+        padding: 5px 5px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 400px;
+		text-align: justify;
+	}

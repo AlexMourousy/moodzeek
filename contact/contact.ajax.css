@@ -1,0 +1,105 @@
+
+
+	.qtip {
+		max-width: none !important;
+		margin:0 30px 0 0;
+	}
+	
+	#contactTip{
+		padding:30px 20px 20px 20px;
+		//width:400px;
+		//margin:0 0 20px 0;
+	}
+	#fotos{
+		//width: 100%;
+		height: 133px;
+		//margin: 0 auto;
+		white-space: nowrap;
+		//text-align: center;
+	}
+	#fotos img{
+		height: 133px;
+		width: 200px;
+		padding: 0 10px;
+		opacity:.7;
+	}
+	#fotos img:hover{
+		opacity:1;
+	}
+	#AlexMourousy{//float:left;}
+	#AurelieHampel{ //float: right;}
+	
+	#contactform{
+		padding: 15px 0 0 0;
+	}
+	#who{
+		text-align:right;
+		color:#e4d3d3;
+		padding:0 0 10px 10px;
+		width:420px;
+		opacity:.8;
+	}
+	#who:hover{opacity:1;}
+	#who a, #who a:visited{
+		color: inherit;
+	}
+	#who a:hover{
+		color: #AE5216;
+	}	
+	#nom, #email, #message{
+		background-color: gray;
+		color: black;
+		font-weight: bold;
+		padding: 10px;
+		margin: 10px;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		border-radius:6px;	
+		opacity:0.5;
+		font-family: Georgia;
+		display: block;
+		float: left;
+	}
+	#nom:focus, #email:focus, #message:focus{
+		border: 2px solid red; 
+		background-color: darkgreen;
+		opacity:1;
+		color:white;
+	}
+	#nom:hover, #email:hover, #message:hover{
+		border: 2px solid red; 
+	}
+
+	#nom { 	 width: 50%; }
+	#email{  width: 64%; }
+	#message{width:80%; }
+
+	label.error{
+		color: #C00000;
+		display: block;
+		float: left;
+		padding: 0 0 0 20px;
+		text-align: center;
+		font-size: 10px;
+		font-weight: bold;
+		//width: 140px;
+	}
+
+	#contactform p:last-child{
+		text-align:center;
+	}
+	#buttonContact{
+		margin: 10px 0 0 0;
+	}
+
+	#retour {
+		display: none;
+		color: white;
+		font-size: 12px;
+		font-weight: bold;
+		//margin: 7%;
+		text-align: center;
+		padding: 10px 0 40px;
+		//margin: 20px auto;
+	}
+	

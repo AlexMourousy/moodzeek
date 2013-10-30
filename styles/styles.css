@@ -1,0 +1,464 @@
+@charset "UTF-8";
+
+#hideAll{
+	display:none;
+	position: fixed;
+	left: 0px; 
+	right: 0px; 
+	top: 0px; 
+	bottom: 0px; 
+	background-color: #2A0A00;
+ 	/* IE10 Consumer Preview */ 
+	background-image: -ms-radial-gradient(right bottom, ellipse farthest-side, #995C01 0%, #000000 90%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-radial-gradient(right bottom, ellipse farthest-side, #995C01 0%, #000000 90%);
+	/* Opera */ 
+	background-image: -o-radial-gradient(right bottom, ellipse farthest-side, #995C01 0%, #000000 90%);
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(radial, right bottom, 0, right bottom, 862, color-stop(0, #995C01), color-stop(.9, #000000));
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-radial-gradient(right bottom, ellipse farthest-side, #995C01 0%, #000000 90%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: radial-gradient(ellipse farthest-side at right bottom, #995C01 0%, #000000 90%);
+	z-index: 99; /* Higher than anything else in the document */
+}
+body{
+	background:url('../img/turntable.v3.jpg') center center fixed no-repeat #110000;
+	-webkit-background-size: cover; /* pour Chrome et Safari */
+	-moz-background-size: cover; /* pour Firefox */
+	-o-background-size: cover; /* pour Opera */
+	background-size: cover; /* version standardis�e */
+    color: white;
+	margin: 2% 5% 2% 5%; /* margin:0; padding:0; ?*/
+	font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	z-index:0;
+}
+.big {
+     font-size: xx-large;
+}
+.h2{
+	font-size: 1.7em;
+	font-weight: bold;
+	padding: 1px 0;
+	color: #e4d3d3;
+}
+p.h2:first-letter{ font-size: 1.8em; }
+#header{
+	min-height: 95px ; /* Aide a stabiliser le demarrage  - 72 au deb*/
+	overflow:auto;
+}
+#leftHeader,#rightHeader{
+	width: 50%; height:100%;
+	display: inline-block;
+	float: left;
+	position: relative;
+}
+
+#logo{
+	display: inline-block;
+	float: left;
+	width: 50%;
+	cursor: help;
+	opacity: 0.8;
+}
+#logo:hover{
+	opacity: 1;
+}
+#logo a{
+	cursor: help;
+}
+#logo img{ 
+	padding: 3em 0 0.3em;
+	width: 70%;
+}
+#login{
+	display: inline-block;
+	width:50%;
+	text-align: right;
+	position: absolute;
+	bottom: 0;
+}
+#login a, #login a:visited{
+	text-decoration:none;
+	color: #e4d3d3;
+	padding: 10px 0 0 30px;
+}
+#login a:hover{
+	color: #e00000;
+}
+/******************************************************************/
+#pseudo{
+	display: inline-block;
+	float: right;
+	opacity:0.7;
+	margin: 3% 0 0 0;
+	padding: 20px;
+}
+#pseudo:hover{
+	opacity: 1;
+}
+#pseudo a, #pseudo a:visited{
+	text-decoration: none;
+	color: #e4d3d3;
+	padding: 20px 10px 30px 40px;
+}
+#pseudo a:hover{
+	text-decoration: none;
+	color: #e00000;
+}
+/*******************************************************************/
+#container{
+	margin: 0 auto;
+}
+#teaser{
+	color:#e4d3d3;
+	text-align: center;
+	cursor: help;
+	opacity: .8;
+}
+#teaser:hover{
+	opacity: 1;
+}
+
+#dashboard{
+	clear: both;
+	display : inline-block;
+	float: left;
+	font-weight:bold;
+	width: 50%;
+}
+
+/*****************************************************************/
+form{
+	width:100%;
+}
+#moodTable,#activTable{
+	margin-left: 3%;
+	width:100%;
+	border-collapse: collapse;
+}
+#moodSelect,#activSelect,#moodSelect:visited,#activSelect:visited{
+	text-decoration: none;
+	padding: 7px 0 0 0;
+}
+#moodSelect p.h2:hover,#activSelect p.h2:hover{
+	text-decoration: none;
+	color: #00AE00;
+}
+#moodTable tr td{
+	text-align: left;
+	width:25%;
+	padding: 0 0 0 10px;
+	white-space: nowrap;
+}
+#activTable tr td{
+	text-align: left;
+	width:33%;
+	padding: 0 0 0 10px;
+	white-space: nowrap;
+}
+
+/*********************************************************/
+#buttonTable{
+	width:100%;
+	border-collapse: collapse;
+}
+#buttonTable tr th{
+	white-space: nowrap;
+}
+
+/****************   CHECKBOX  & LABELS **********************/
+
+div.mood.styledCheckbox, div.activ.styledCheckbox{
+	display: inline-block;
+	float:left;
+}
+#moodTable tr td label, #activTable tr td label{
+	display: inline-block; 
+	padding: 10px 10px 10px 10px;
+	-moz-border-radius:3x;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	color: #e4d3d3;
+	cursor:pointer;
+}
+#moodTable tr td label:first-letter, #activTable tr td label:first-letter{
+	font-size: 1.4em; 
+}
+#moodTable tr td label{ min-width: 60%; }
+#moodTable tr td:last-child label{ min-width: 30%; }
+#activTable tr td label{ min-width: 60%; }
+#activTable tr td:last-child label{ min-width: 50%; }
+#moodTable tr td label:hover{
+	color: white;
+	background: #320F01;
+	background: rgba(50,15,1,.6);
+}
+#activTable tr td label:hover{
+	color: white;
+	background: #320F01;
+	background: rgba(0,0,0,.5);
+}
+#activTable tr td:first-child label:hover{ background: black; }
+#moodTable tr td:first-child label:hover { background: #320F01; background: rgba(50,15,1,.7);}
+
+/*******************     BUTTONS    ***********************/
+
+#buttonList{
+	width: 90%;
+	margin: 35px 15px 15px;
+}
+#buttonFav{
+	margin: 15px;
+}
+#buttonAdd, #buttonRem{
+	margin: 15px 0;
+}
+#buttonRem{
+	padding: 6px 15px;
+}
+#buttonRetr.buttonRect{
+	padding: 6px 15px;
+	margin: 8px 0 11px;
+}
+#inputSearch{
+	width: 122px;
+    background-color: gray;
+    color: black;
+    font-weight: bold;
+	padding: 7px 10px;
+	margin: 10px 0 15px 5px;
+	-moz-border-radius:3x;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	opacity:0.5;
+}
+#inputSearch:focus{
+	border: 2px solid red;
+	background-color: darkgreen;
+	opacity:1;
+	color:white;
+}
+#goSearch{
+	margin: 7px 0;
+}
+
+/************************** VOTE *******************************/
+
+#voteCell {
+    width: 10em;
+    vertical-align: middle;
+}
+#voteDiv {
+    text-align: center;
+}
+#voteUp, #voteDown, #filterUp, #filterDown{
+    text-indent: -9999em;
+    font-size: 1px;
+    display: block;
+    margin: 0px auto;
+	padding: 5px;
+    width: 50px;
+    height: 30px;
+    background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	cursor: crosshair;
+	opacity: 0.7;
+}
+#voteUp:hover, #voteDown:hover, #filterUp:hover, #filterDown:hover{
+	opacity: 1;
+}
+#filterUp{ background-image: url("../img/voteUp.png"); }
+#filterDown{ background-image: url("../img/voteDown.png"); }
+#voteUp{ background-image: url("../img/voteUpMar.png"); }
+#voteDown{ background-image: url("../img/voteDownMar.png"); }
+
+#voteCount{
+	padding: 0 0 4px;
+	margin : .3em 0;
+    display: block;
+	font-weight: normal;
+    font-size: 13px;
+	cursor: pointer;
+}/*
+#filterUp + #voteCount:hover{
+	color: #c62d1f;
+}*/
+
+/*****************  WITNESS  *********************/
+#witness{
+	color: #CD6D21;
+    font-weight: bold;
+	height: 25px;
+}
+#witness p{
+	text-align:center;
+}
+#loader{
+	opacity: 0.4;
+}
+
+/***************************************************/
+#playerContainer{
+	//position: relative;
+	width: 50%;
+	display: inline-block;
+	float:left;
+}
+#player{
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	opacity: 0.8; /* redef en JS */
+	width: 200px;
+	margin: 0 auto;
+}
+
+.clear{
+	clear: both;
+}
+
+/********************************************************/
+#footer{
+	text-align:center;
+	color: #e4d3d3;
+	padding: 2% 0;
+	white-space : nowrap;
+}
+#footer p{
+	cursor: default;
+}
+#footer:hover{
+	opacity:1 !important;
+	//color:white;
+}
+
+#footer a, #footer a:visited{
+	color: #e4d3d3;
+	padding: 20px 0;
+}
+#footer:hover a{
+	color: white;
+}
+
+
+/********************  DIRECTIONS QTIP  *********************/
+#teaserTipHtml{
+	display:none;
+}
+#teaserTip{
+	display: inline-block;
+	padding:30px 20px 30px 20px;
+	margin:0;
+	color:#e4d3d3;
+}
+#teaserStave{
+	display: block;
+	margin: 7px auto -10px;
+	height: 60px; width: 154px;
+}
+#teaserTip h2:first-letter{ font-size: 1.4em; }
+#teaserTip h2 { 
+	text-align:center; 
+} 
+#teaserTip h3:first-letter{ font-size: 1.4em; }
+#teaserTip h3{
+	clear: both;
+	padding: 20px 0 0 5px;
+}
+#teaserTip  img.teaserArray{
+	height: 32px; width: 32px;
+	display: inline-block;
+	float: left;
+	clear: both;	
+}
+#teaserTip p:first-letter{ font-size: 1.4em; }
+#teaserTip p{
+	display: inline-block;
+	float: left;
+	padding: 0 0 0 5px;
+}
+#teaserThanks{
+	text-align: center;
+	margin: 25px 0 0 0;
+}
+#teaserTip #teaserDZImg{
+	width: 100px; height: 50px;
+}
+#teaserTip #teaserDZLink{
+	display: inline-block;
+	margin: 0 25px -10px 0;
+	vertical-align: middle;
+}
+#teaserTip h4:first-letter{ font-size: 1.4em; }
+#teaserTip h4{
+	display: inline-block;
+	margin: 0;
+}
+#teaserTip #teaserQTipImg{
+	width: 110px;  height: 36px;
+}
+#teaserTip #teaserQTipLink{
+	display: inline-block;
+	margin: -8px 0 0 25px;
+	vertical-align: middle;
+}
+#teaserTip #teaserScreenImg{
+	width: 80px; height: 40px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+}
+#teaserTip #teaserScreenLink{
+	display: inline-block;
+	margin: 5px 25px -10px 0;
+	vertical-align: middle;
+}
+#teaserTip a img{ opacity: .8; }
+#teaserTip a img:hover{ opacity: 1;}
+
+
+/************************** WELCOME QTIP ***********************************/
+
+#welcomeTipHtml{
+	display: none;
+}
+#welcome{
+	margin: 40px 40px 50px;
+	text-align: center;
+	color: #998888;
+}
+#welcome img{
+	display: block;
+}
+#welcome #welcomeLogo{
+	width: 14em;
+	height: 4.9em;
+	margin: 0 auto;
+}
+#welcome #welcomeLoader{
+	opacity: .6;
+	margin: 5em auto;
+}
+#welcome h2{
+	cursor: default;
+}
+
+/************************** DEEZER PLAYLISTS QTIP *******************************/
+
+#userPlaylist{
+	margin:50px;
+}
+#userPlaylist a, #userPlaylist a:visited{
+	display: block;
+	text-decoration: none;
+	color: #e4d3d3;
+	padding: 10px;
+}
+#userPlaylist a:hover{
+	text-decoration: none;
+	color: #e00000;
+}
+
